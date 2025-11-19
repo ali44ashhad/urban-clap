@@ -1,9 +1,6 @@
-import React, { useState, useMemo } from "react";
-
-// ServiceCard no longer manages modal open state.
-// Parent (Home) controls selection via onSelect prop.
-// We keep image loading states local for UX but they don't cause remounts.
-function ServiceCardComponent({ service, onSelect, isSelected = false }) {
+import React, { useState, useMemo } from "react"; 
+ 
+  function ServiceCardComponent({ service, onSelect, onBook, isSelected = false }) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
