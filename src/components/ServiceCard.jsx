@@ -122,18 +122,7 @@ function ServiceCardComponent({ service, onSelect, isSelected = false }) {
               Save ₹{service.originalPrice - service.basePrice}
             </span>
           )}
-        </div>
-
-        {/* Button calls parent's onSelect (stable) */}
-        {/* <button
-          onClick={() => onSelect && onSelect(service)}
-          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 px-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg flex items-center justify-center space-x-2"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-          </svg>
-          <span>{isSelected ? "Selected" : "Select Service"}</span>
-        </button> */}
+        </div> 
         <button
   onClick={() => {
     if (onSelect) onSelect(service);  // service select karna

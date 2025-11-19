@@ -8,8 +8,7 @@ import { CartProvider } from "./context/CartContext";
 async function bootstrap() {
   if (import.meta.env.DEV) {
     try {
-      const { worker } = await import("./mocks/browser");
-      // start and wait for the service worker registration
+      const { worker } = await import("./mocks/browser"); 
       await worker.start({ onUnhandledRequest: "bypass" });
       console.log("MSW worker started");
     } catch (err) {

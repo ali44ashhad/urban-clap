@@ -3,9 +3,9 @@ import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
 export default function CartSidebar({ onClose }) {
-  const { state } = useCart();
+  const { state } = useCart(); 
 
-  // Calculate total
+  // Calculate total amount and total items
   const totalAmount = state.items.reduce((total, item) => total + (item.qty * item.unitPrice), 0);
   const totalItems = state.items.reduce((total, item) => total + item.qty, 0);
 

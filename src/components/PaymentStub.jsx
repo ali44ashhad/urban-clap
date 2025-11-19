@@ -75,7 +75,6 @@ export default function PaymentStub({ amount, onSuccess }) {
         <p className="text-gray-500 text-sm">Secure and encrypted payment</p>
       </div>
 
-      {/* Payment Methods */}
       <div className="space-y-3 mb-6">
         {paymentMethods.map((method) => (
           <button
