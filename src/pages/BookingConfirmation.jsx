@@ -63,35 +63,35 @@ export default function BookingConfirmation() {
     );
   }
 
-  // if (error || !booking) {
-  //   return (
-  //     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-  //       <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full text-center">
-  //         <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-  //           <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-  //             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-  //           </svg>
-  //         </div>
-  //         <h2 className="text-xl font-bold text-gray-800 mb-2">Booking Not Found</h2>
-  //         <p className="text-gray-600 mb-6">{error || "The requested booking could not be found."}</p>
-  //         <div className="flex gap-3 justify-center">
-  //           <button
-  //             onClick={() => navigate("/bookings")}
-  //             className="px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-  //           >
-  //             View All Bookings
-  //           </button>
-  //           <button
-  //             onClick={() => navigate("/")}
-  //             className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
-  //           >
-  //             Go Home
-  //           </button>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // }
+  if (error || !booking) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+        <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full text-center">
+          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h2 className="text-xl font-bold text-gray-800 mb-2">Booking Not Found</h2>
+          <p className="text-gray-600 mb-6">{error || "The requested booking could not be found."}</p>
+          <div className="flex gap-3 justify-center">
+            <button
+              onClick={() => navigate("/bookings")}
+              className="px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              View All Bookings
+            </button>
+            <button
+              onClick={() => navigate("/")}
+              className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+            >
+              Go Home
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
@@ -235,7 +235,7 @@ export default function BookingConfirmation() {
         </div>
 
         {/* Action Buttons */}
-        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <Link
             to="/bookings"
             className="px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors text-center flex items-center justify-center gap-2"
@@ -254,7 +254,7 @@ export default function BookingConfirmation() {
             </svg>
             Back to Home
           </Link>
-        </div> */}
+        </div>
  
       </div>
     </div>
