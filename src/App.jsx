@@ -8,6 +8,8 @@ import BookingConfirmation from "./pages/BookingConfirmation";
 import BookingsPage from "./pages/BookingsPage";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 export default function App() {
   return (
@@ -20,6 +22,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/booking/:id" element={<BookingConfirmation />} />
           <Route path="/bookings" element={<BookingsPage />} />
