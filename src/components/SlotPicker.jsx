@@ -146,6 +146,7 @@ export default function SlotPicker({ date, value, onChange }) {
       {/* Slots Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {slots.map((slot) => {
+          
           const status = getSlotStatus(slot);
           const isSelected = value === slot.slot;
           const isDisabled = status === "full";
