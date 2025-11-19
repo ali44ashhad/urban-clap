@@ -1,48 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import { useParams, Link } from "react-router-dom";
-// import api from "../api/client";
-
-// export default function BookingConfirmation() {
-//   const { id } = useParams();
-//   const [booking, setBooking] = useState(null);
-
-//   useEffect(() => {
-//     api
-//       .get("/bookings")
-//       .then((r) => {
-//         const found = r.data.find((b) => b.id === id);
-//         setBooking(found || null);
-//       })
-//       .catch(() => setBooking(null));
-//   }, [id]);
-
-//   if (booking === null) return <div className="text-center p-6">Loading booking...</div>;
-
-//   return (
-//     <div>
-//       <h1 className="text-2xl font-bold mb-4">Booking Confirmed</h1>
-//       <div className="border p-4 rounded">
-//         <div className="mb-2"><strong>ID:</strong> {booking.id}</div>
-//         <div className="mb-2"><strong>Phone:</strong> {booking.userPhone}</div>
-//         <div className="mb-2">
-//           <strong>Appointment:</strong> {booking.appointment?.date} {booking.appointment?.slot}
-//         </div>
-//         <div className="mb-2">
-//           <strong>Technician:</strong> {booking.technician?.name} ({booking.technician?.rating})
-//         </div>
-
-//         <details className="mt-3 p-2 bg-gray-50 rounded">
-//           <summary className="cursor-pointer">Full booking JSON</summary>
-//           <pre className="mt-2 text-sm overflow-auto max-h-60">{JSON.stringify(booking, null, 2)}</pre>
-//         </details>
-
-//         <div className="mt-4">
-//           <Link to="/bookings" className="text-blue-600">View all bookings</Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 
 
 import React, { useEffect, useState } from "react";
@@ -108,35 +63,35 @@ export default function BookingConfirmation() {
     );
   }
 
-  if (error || !booking) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full text-center">
-          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h2 className="text-xl font-bold text-gray-800 mb-2">Booking Not Found</h2>
-          <p className="text-gray-600 mb-6">{error || "The requested booking could not be found."}</p>
-          <div className="flex gap-3 justify-center">
-            <button
-              onClick={() => navigate("/bookings")}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-            >
-              View All Bookings
-            </button>
-            <button
-              onClick={() => navigate("/")}
-              className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
-            >
-              Go Home
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // if (error || !booking) {
+  //   return (
+  //     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+  //       <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full text-center">
+  //         <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+  //           <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  //             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  //           </svg>
+  //         </div>
+  //         <h2 className="text-xl font-bold text-gray-800 mb-2">Booking Not Found</h2>
+  //         <p className="text-gray-600 mb-6">{error || "The requested booking could not be found."}</p>
+  //         <div className="flex gap-3 justify-center">
+  //           <button
+  //             onClick={() => navigate("/bookings")}
+  //             className="px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+  //           >
+  //             View All Bookings
+  //           </button>
+  //           <button
+  //             onClick={() => navigate("/")}
+  //             className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+  //           >
+  //             Go Home
+  //           </button>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
@@ -280,7 +235,7 @@ export default function BookingConfirmation() {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <Link
             to="/bookings"
             className="px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors text-center flex items-center justify-center gap-2"
@@ -299,7 +254,7 @@ export default function BookingConfirmation() {
             </svg>
             Back to Home
           </Link>
-        </div>
+        </div> */}
  
       </div>
     </div>
