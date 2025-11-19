@@ -1,6 +1,5 @@
 // api/services/index.js
 // Vercel serverless function that returns mock services.
-// Put this file at the project root in folder: /api/services/index.js
 
 export default function handler(req, res) {
   const services = [
@@ -47,7 +46,7 @@ export default function handler(req, res) {
     },
   ];
 
-  // Cache at the edge briefly (optional)
+  // optional caching at the edge
   res.setHeader("Cache-Control", "s-maxage=60, stale-while-revalidate=300");
-  return res.status(200).json(services);
+  res.status(200).json(services);
 }
