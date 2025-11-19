@@ -1,6 +1,6 @@
 // api/services/index.js
-// Simple serverless endpoint for Vercel that returns mock services.
-// Keeps your frontend unchanged (it calls /api/services).
+// Vercel serverless function that returns mock services.
+// Put this file at the project root in folder: /api/services/index.js
 
 export default function handler(req, res) {
   const services = [
@@ -47,7 +47,7 @@ export default function handler(req, res) {
     },
   ];
 
-  // Cache briefly at CDN edge
+  // Cache at the edge briefly (optional)
   res.setHeader("Cache-Control", "s-maxage=60, stale-while-revalidate=300");
-  res.status(200).json(services);
+  return res.status(200).json(services);
 }
